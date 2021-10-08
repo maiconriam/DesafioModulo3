@@ -19,9 +19,10 @@ public class ServicoCliente {
         }
     }
 
-    public static void validarEmail(String email) throws Exception{
+    public static String validarEmail(String email) throws Exception{
         if(email.contains("@")){
-            throw new Exception("E-mail invalido");
+            return email;
         }
+        throw new Exception("E-mail invalido");
     }
 }
