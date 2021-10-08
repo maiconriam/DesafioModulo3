@@ -66,7 +66,7 @@ public class Sistema {
         return vendas;
     }
 
-    public static void executar()throws Exception{
+    public static boolean executar()throws Exception{
         boolean menu = true;
 
         while (menu){
@@ -102,5 +102,6 @@ public class Sistema {
                 menu = false;
             }
         }
+        return menu;
     }
 }
