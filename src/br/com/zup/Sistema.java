@@ -16,7 +16,7 @@ public class Sistema {
         System.out.println("Digite 5: Para sair do programa");
     }
 
-    public static Cliente cadastrarCliente(){
+    public static Cliente cadastrarCliente() throws Exception{
         String nome = capturarDados("Digite o nome do cliente: ").nextLine();
         String cpf = capturarDados("Digite o cpf do cliente: ").nextLine();
         String email = capturarDados("Digite o email do cliente: ").nextLine();
@@ -36,7 +36,7 @@ public class Sistema {
         return vendedor;
     }
 
-    public static Venda cadastrarVenda(){
+    public static Venda cadastrarVenda()throws Exception{
         String nomeDoProduto = capturarDados("Digite o nome do produto:").nextLine();
         double valor = capturarDados("Qual o valor do produto?").nextDouble();
         String dataDeRegistro = capturarDados("Qual a data de registo?").nextLine();
@@ -47,7 +47,7 @@ public class Sistema {
         return venda;
     }
 
-    public static void executar(){
+    public static void executar()throws Exception{
         boolean menu = true;
 
         while (menu){
