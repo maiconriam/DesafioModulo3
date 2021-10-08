@@ -8,6 +8,14 @@ public class Sistema {
         return new Scanner(System.in);
     }
 
+    public static void menu(){
+        System.out.println("Digite 1: Para cadastrar Venda");
+        System.out.println("Digite 2: Para verificar lista de vendas");
+        System.out.println("Digite 3: Para verificar lista de clientes");
+        System.out.println("Digite 4: Para verificar lista de vendedores");
+        System.out.println("Digite 5: Para sair do programa");
+    }
+
     public static Cliente cadastrarCliente(){
         String nome = capturarDados("Digite o nome do cliente: ").nextLine();
         String cpf = capturarDados("Digite o cpf do cliente: ").nextLine();
