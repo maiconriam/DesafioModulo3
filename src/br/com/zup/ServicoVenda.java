@@ -12,4 +12,10 @@ public class ServicoVenda {
         vendas.add(venda);
         return venda;
     }
+
+    public static void mostrarVendas(){
+        for(Venda refencia : vendas){
+            System.out.println(refencia);
+        }
+    }
 }

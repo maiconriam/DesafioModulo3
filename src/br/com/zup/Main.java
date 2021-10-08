@@ -6,5 +6,6 @@ public class Main {
         Sistema.cadastrarVenda();
         ServicoCliente.mostrarListaClientes();
         ServicoVendedor.mostrarListaVendedores();
+        ServicoVenda.mostrarVendas();
     }
 }
