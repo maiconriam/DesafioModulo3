@@ -8,6 +8,8 @@ public class ServicoCliente {
 
     public static Cliente cadastrarCliente(String nome, String cpf, String email, String telefone){
         Cliente cliente = new Cliente(nome, cpf, email, telefone);
+        clientes.add(cliente);
         return cliente;
     }
+
 }
