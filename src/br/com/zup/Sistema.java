@@ -4,11 +4,14 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Sistema {
+
+    //Metodo para pegar dados digitados pelo usuario
     public static Scanner capturarDados(String mensagem) {
         System.out.println(mensagem);
         return new Scanner(System.in);
     }
 
+    //Menu do programa
     public static void menu(){
         System.out.println("Digite 1: Para cadastrar um cliente");
         System.out.println("Digite 2: Para cadastrar um vendedor");
@@ -21,6 +24,7 @@ public class Sistema {
         System.out.println("Digite 9: Para sair do programa");
     }
 
+    //Metodo para receber informações do usuario para cadastrar um cliente
     public static Cliente cadastrarCliente() throws Exception{
         String nome = capturarDados("Digite o nome do cliente: ").nextLine();
         String cpf = capturarDados("Digite o cpf do cliente: ").nextLine();
@@ -31,6 +35,7 @@ public class Sistema {
         return cliente;
     }
 
+    //Metodo para receber informações do usuario para cadastrar um vendedor
     public static Vendedor cadastrarVendedor()throws Exception{
         String nome = capturarDados("Digite o nome do vendedor: ").nextLine();
         String cpf = capturarDados("Digite o cpf do vendendor: ").nextLine();
@@ -41,6 +46,7 @@ public class Sistema {
         return vendedor;
     }
 
+    //Metodo para receber informações do usuario para cadastrar uma venda
     public static Venda cadastrarVenda()throws Exception{
         String nomeDoProduto = capturarDados("Digite o nome do produto:").nextLine();
         double valor = capturarDados("Qual o valor do produto?").nextDouble();
@@ -52,6 +58,7 @@ public class Sistema {
         return venda;
     }
 
+    //Metodo para pegar o cpf digitado pelo usuario e percorrer a lista para verificar se existe esse cpf na lista
     public static List<Venda> pesquisarVendaCliente() throws Exception{
         String cpf = capturarDados("Digite o cpf que deseja pesquisar:").nextLine();
 
@@ -59,6 +66,7 @@ public class Sistema {
         return vendas;
     }
 
+    //Metodo para pegar o email digitado pelo usuario e percorrer a lista para verificar se existe esse email na lista
     public static List<Venda> pesquisarVendaVendedor() throws Exception{
         String email = capturarDados("Digite o email que deseja pesquisar:").nextLine();
 
@@ -66,6 +74,7 @@ public class Sistema {
         return vendas;
     }
 
+    //Metodo para executar todos os metodos do sistema para executar na main
     public static boolean executar()throws Exception{
         boolean menu = true;
 

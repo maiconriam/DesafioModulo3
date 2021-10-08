@@ -6,6 +6,7 @@ import java.util.List;
 public class ServicoCliente {
     private static List<Cliente> clientes = new ArrayList<>();
 
+    //Cadastrar Cliente e adicionar na lista de clientes
     public static Cliente cadastrarCliente(String nome, String cpf, String email, String telefone) throws Exception{
         validarEmail(email);
         verificarEmailExistente(email);
@@ -15,12 +16,14 @@ public class ServicoCliente {
         return cliente;
     }
 
+    //Mostrar lista de clientes para usuario
     public static void mostrarListaClientes(){
         for (Cliente referencia : clientes){
             System.out.println(referencia);
         }
     }
 
+    //Metodo para validar se o email é correto, pelo @
     public static String validarEmail(String email) throws Exception{
         if(email.contains("@")){
             return email;
@@ -28,6 +31,7 @@ public class ServicoCliente {
         throw new Exception("E-mail invalido");
     }
 
+    //Metodo para verificar se cpf ja tem cadastrado na lista de clientes
     public static void verificarCpfRepetido(String cpf)throws Exception{
         for(Cliente referencia : clientes){
             if(referencia.getCpf().equals(cpf)){
@@ -36,6 +40,7 @@ public class ServicoCliente {
         }
     }
 
+    //Metodo para verificar se email ja tem cadastrado na lista de clientes
     public static void verificarEmailExistente(String email) throws Exception{
         for (Cliente referencia : clientes){
             if (referencia.getEmail().equals(email)){
@@ -44,6 +49,7 @@ public class ServicoCliente {
         }
     }
 
+    //Metodo para verificar se tem um cpf digitado pelo usuario na lista de clientes
     public static Cliente pesquisarCliente(String cpf) throws Exception{
         for (Cliente referencia : clientes){
             if (referencia.getCpf().equals(cpf)){
