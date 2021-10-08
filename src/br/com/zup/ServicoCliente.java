@@ -52,14 +52,5 @@ public class ServicoCliente {
         }
         throw new Exception("Nenhum cpf cadastrado");
     }
-
-    public static Cliente pesquisarCpfDoClienteCadastrado(String cpf)throws Exception{
-        for (Cliente referencia : clientes){
-            if(referencia.getCpf().equals(cpf)){
-                System.out.println(referencia);
-            }
-        }
-        throw new Exception("CPF não cadastrado");
-    }
 }
 

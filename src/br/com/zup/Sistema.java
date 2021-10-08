@@ -10,13 +10,15 @@ public class Sistema {
     }
 
     public static void menu(){
-        System.out.println("Digite 1: Para cadastrar Venda");
-        System.out.println("Digite 2: Para verificar lista de vendas");
-        System.out.println("Digite 3: Para verificar lista de clientes");
-        System.out.println("Digite 4: Para verificar lista de vendedores");
-        System.out.println("Digite 5: Para pesquisar as vendas de um cliente:");
-        System.out.println("Digite 6: Para pesquisar as vendas de um vendedor:");
-        System.out.println("Digite 7: Para sair do programa");
+        System.out.println("Digite 1: Para cadastrar um cliente");
+        System.out.println("Digite 2: Para cadastrar um vendedor");
+        System.out.println("Digite 3: Para cadastrar Venda");
+        System.out.println("Digite 4: Para verificar lista de vendas");
+        System.out.println("Digite 5: Para verificar lista de clientes");
+        System.out.println("Digite 6: Para verificar lista de vendedores");
+        System.out.println("Digite 7: Para pesquisar as vendas de um cliente:");
+        System.out.println("Digite 8: Para pesquisar as vendas de um vendedor:");
+        System.out.println("Digite 9: Para sair do programa");
     }
 
     public static Cliente cadastrarCliente() throws Exception{
@@ -45,6 +47,7 @@ public class Sistema {
         String dataDeRegistro = capturarDados("Qual a data de registo?").nextLine();
         String cpfCliente = capturarDados("Qual o cpf do cliente para essa venda?").nextLine();
         String emailDoVendedor = capturarDados("Qual o e-mail do vendedor para essa venda?").nextLine();
+
         Venda venda = ServicoVenda.cadastrarVenda(nomeDoProduto, valor, dataDeRegistro, emailDoVendedor, cpfCliente);
         return venda;
     }
@@ -71,24 +74,30 @@ public class Sistema {
             int escolhaMenu = capturarDados("Digite sua escolha:").nextInt();
 
             if(escolhaMenu == 1){
-                cadastrarVenda();
+                cadastrarCliente();
             }
             if(escolhaMenu == 2){
-                ServicoVenda.mostrarVendas();
+                cadastrarVendedor();
             }
             if(escolhaMenu == 3){
-                ServicoCliente.mostrarListaClientes();
+                cadastrarVenda();
             }
             if(escolhaMenu == 4){
-                ServicoVendedor.mostrarListaVendedores();
+                ServicoVenda.mostrarVendas();
             }
             if(escolhaMenu == 5){
-                System.out.println(pesquisarVendaCliente());
+                ServicoCliente.mostrarListaClientes();
             }
             if(escolhaMenu == 6){
-                System.out.println(pesquisarVendaVendedor());
+                ServicoVendedor.mostrarListaVendedores();
             }
             if(escolhaMenu == 7){
+                System.out.println(pesquisarVendaCliente());
+            }
+            if(escolhaMenu == 8){
+                System.out.println(pesquisarVendaVendedor());
+            }
+            if(escolhaMenu == 9){
                 System.out.println("Programa finalizado");
                 menu = false;
             }

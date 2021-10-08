@@ -7,9 +7,10 @@ public class ServicoVenda {
     private static List<Venda> vendas = new ArrayList<>();
 
     public static Venda cadastrarVenda(String nomeDoProduto, double valor, String dataDeRegistro, String email, String cpf) throws Exception{
-        Cliente cliente = ServicoCliente.pesquisarCpfDoClienteCadastrado(cpf);
+        Cliente cliente = ServicoCliente.pesquisarCliente(cpf);
         ServicoCliente.validarEmail(email);
-        Vendedor vendedor = ServicoVendedor.pesquisarEmailDoClienteCadastrado(email);
+        Vendedor vendedor = ServicoVendedor.pesquisarVendedor(email);
+
         Venda venda = new Venda(nomeDoProduto, valor, dataDeRegistro, vendedor, cliente);
         vendas.add(venda);
         return venda;
@@ -34,7 +35,7 @@ public class ServicoVenda {
     public static List<Venda> pesquisarVendaVendedor(String email){
         List<Venda> vendasVendedor = new ArrayList<>();
         for (Venda referencia : vendas){
-            if (referencia.getCliente().getEmail().equals(email)){
+            if (referencia.getVendedor().getEmail().equals(email)){
                 vendasVendedor.add(referencia);
             }
         }
