@@ -27,4 +27,15 @@ public class Sistema {
         Vendedor vendedor = ServicoVendedor.cadastrarVendedor(nome, cpf, email,ctps);
         return vendedor;
     }
+
+    public static Venda cadastrarVenda(){
+        String nomeDoProduto = capturarDados("Digite o nome do produto:").nextLine();
+        double valor = capturarDados("Qual o valor do produto?").nextDouble();
+        String dataDeRegistro = capturarDados("Qual a data de registo?").nextLine();
+
+        Cliente cliente = cadastrarCliente();
+        Vendedor vendedor = cadastrarVendedor();
+        Venda venda = ServicoVenda.cadastrarVenda(nomeDoProduto, valor, dataDeRegistro, vendedor, cliente);
+        return venda;
+    }
 }
