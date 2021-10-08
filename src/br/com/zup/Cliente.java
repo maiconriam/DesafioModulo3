@@ -20,7 +20,7 @@ public class Cliente extends Pessoa{
     public String toString() {
         StringBuilder retorno = new StringBuilder();
         retorno.append(super.toString());
-        retorno.append("Telefone : " + telefone);
+        retorno.append("\n Telefone : " + telefone);
         return retorno.toString();
     }
 }

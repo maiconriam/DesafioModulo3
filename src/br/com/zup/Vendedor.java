@@ -20,7 +20,7 @@ public class Vendedor extends Pessoa{
     public String toString() {
         StringBuilder retorno = new StringBuilder();
         retorno.append(super.toString());
-        retorno.append("CTPS : " + ctps);
+        retorno.append("\n CTPS : " + ctps);
         return retorno.toString();
     }
 }
