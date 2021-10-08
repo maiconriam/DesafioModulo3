@@ -4,9 +4,8 @@ public class Main {
 
     public static void main(String[] args) {
         try {
-            Sistema.cadastrarCliente();
-            Sistema.cadastrarCliente();
-            ServicoCliente.mostrarListaClientes();
+            Sistema.cadastrarVendedor();
+            Sistema.cadastrarVendedor();
         }catch (Exception erro){
             System.out.println(erro.getMessage());
         }
