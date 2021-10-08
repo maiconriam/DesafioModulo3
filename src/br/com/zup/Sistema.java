@@ -46,4 +46,30 @@ public class Sistema {
         Venda venda = ServicoVenda.cadastrarVenda(nomeDoProduto, valor, dataDeRegistro, vendedor, cliente);
         return venda;
     }
+
+    public static void executar(){
+        boolean menu = true;
+
+        while (menu){
+            menu();
+            int escolhaMenu = capturarDados("Digite sua escolha:").nextInt();
+
+            if(escolhaMenu == 1){
+                cadastrarVenda();
+            }
+            if(escolhaMenu == 2){
+                ServicoVenda.mostrarVendas();
+            }
+            if(escolhaMenu == 3){
+                ServicoCliente.mostrarListaClientes();
+            }
+            if(escolhaMenu == 4){
+                ServicoVendedor.mostrarListaVendedores();
+            }
+            if(escolhaMenu == 5){
+                System.out.println("Programa finalizado");
+                menu = false;
+            }
+        }
+    }
 }
