@@ -6,8 +6,10 @@ import java.util.List;
 public class ServicoVenda {
     private static List<Venda> vendas = new ArrayList<>();
 
-    public static Venda cadastrarVenda(String nomeDoProduto, double valor, String dataDeRegistro, Vendedor vendedor, String cpf) throws Exception{
+    public static Venda cadastrarVenda(String nomeDoProduto, double valor, String dataDeRegistro, String email, String cpf) throws Exception{
         Cliente cliente = ServicoCliente.pesquisarCpfDoClienteCadastrado(cpf);
+        ServicoCliente.validarEmail(email);
+        Vendedor vendedor = ServicoVendedor.pesquisarEmailDoClienteCadastrado(email);
         Venda venda = new Venda(nomeDoProduto, valor, dataDeRegistro, vendedor, cliente);
         vendas.add(venda);
         return venda;

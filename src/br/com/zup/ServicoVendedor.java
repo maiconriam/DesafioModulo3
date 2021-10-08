@@ -45,4 +45,13 @@ public class ServicoVendedor {
         }
         throw new Exception("Nenhum email cadastrado");
     }
+
+    public static Vendedor pesquisarEmailDoClienteCadastrado(String email)throws Exception{
+        for (Vendedor referencia : vendedores){
+            if(referencia.getEmail().equals(email)){
+                System.out.println(referencia);
+            }
+        }
+        throw new Exception("CPF não cadastrado");
+    }
 }
