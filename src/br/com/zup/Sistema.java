@@ -15,7 +15,8 @@ public class Sistema {
         System.out.println("Digite 3: Para verificar lista de clientes");
         System.out.println("Digite 4: Para verificar lista de vendedores");
         System.out.println("Digite 5: Para pesquisar as vendas de um cliente:");
-        System.out.println("Digite 6: Para sair do programa");
+        System.out.println("Digite 6: Para pesquisar as vendas de um vendedor:");
+        System.out.println("Digite 7: Para sair do programa");
     }
 
     public static Cliente cadastrarCliente() throws Exception{
@@ -56,6 +57,13 @@ public class Sistema {
         return vendas;
     }
 
+    public static List<Venda> pesquisarVendaVendedor() throws Exception{
+        String email = capturarDados("Digite o email que deseja pesquisar:").nextLine();
+
+        List<Venda> vendas = ServicoVenda.pesquisarVendaVendedor(email);
+        return vendas;
+    }
+
     public static void executar()throws Exception{
         boolean menu = true;
 
@@ -79,6 +87,9 @@ public class Sistema {
                 System.out.println(pesquisarVendaCliente());
             }
             if(escolhaMenu == 6){
+                System.out.println(pesquisarVendaVendedor());
+            }
+            if(escolhaMenu == 7){
                 System.out.println("Programa finalizado");
                 menu = false;
             }

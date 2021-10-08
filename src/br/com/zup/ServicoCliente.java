@@ -50,7 +50,7 @@ public class ServicoCliente {
                 return referencia;
             }
         }
-        throw new Exception("Nenhum email cadastrado");
+        throw new Exception("Nenhum cpf cadastrado");
     }
 }
 

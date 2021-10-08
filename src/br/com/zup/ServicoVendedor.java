@@ -36,4 +36,13 @@ public class ServicoVendedor {
             }
         }
     }
+
+    public static Vendedor pesquisarVendedor(String email) throws Exception{
+        for (Vendedor referencia : vendedores){
+            if (referencia.getEmail().equals(email)){
+                return referencia;
+            }
+        }
+        throw new Exception("Nenhum email cadastrado");
+    }
 }

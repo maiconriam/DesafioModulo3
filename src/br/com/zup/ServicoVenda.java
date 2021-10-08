@@ -28,4 +28,14 @@ public class ServicoVenda {
         }
         return vendasCliente;
     }
+
+    public static List<Venda> pesquisarVendaVendedor(String email){
+        List<Venda> vendasVendedor = new ArrayList<>();
+        for (Venda referencia : vendas){
+            if (referencia.getCliente().getEmail().equals(email)){
+                vendasVendedor.add(referencia);
+            }
+        }
+        return vendasVendedor;
+    }
 }
