@@ -43,4 +43,14 @@ public class ServicoCliente {
             }
         }
     }
+
+    public static Cliente pesquisarCliente(String cpf) throws Exception{
+        for (Cliente referencia : clientes){
+            if (referencia.getCpf().equals(cpf)){
+                return referencia;
+            }
+        }
+        throw new Exception("Nenhum email cadastrado");
+    }
 }
+

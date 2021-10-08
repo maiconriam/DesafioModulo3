@@ -1,5 +1,6 @@
 package br.com.zup;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class Sistema {
@@ -13,7 +14,8 @@ public class Sistema {
         System.out.println("Digite 2: Para verificar lista de vendas");
         System.out.println("Digite 3: Para verificar lista de clientes");
         System.out.println("Digite 4: Para verificar lista de vendedores");
-        System.out.println("Digite 5: Para sair do programa");
+        System.out.println("Digite 5: Para pesquisar as vendas de um cliente:");
+        System.out.println("Digite 6: Para sair do programa");
     }
 
     public static Cliente cadastrarCliente() throws Exception{
@@ -47,6 +49,13 @@ public class Sistema {
         return venda;
     }
 
+    public static List<Venda> pesquisarVendaCliente() throws Exception{
+        String cpf = capturarDados("Digite o cpf que deseja pesquisar:").nextLine();
+
+        List<Venda> vendas = ServicoVenda.pesquisarVendaCliente(cpf);
+        return vendas;
+    }
+
     public static void executar()throws Exception{
         boolean menu = true;
 
@@ -67,6 +76,9 @@ public class Sistema {
                 ServicoVendedor.mostrarListaVendedores();
             }
             if(escolhaMenu == 5){
+                System.out.println(pesquisarVendaCliente());
+            }
+            if(escolhaMenu == 6){
                 System.out.println("Programa finalizado");
                 menu = false;
             }
