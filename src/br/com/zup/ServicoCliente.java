@@ -12,7 +12,7 @@ public class ServicoCliente {
         return cliente;
     }
 
-    public static void mostrarLista(){
+    public static void mostrarListaClientes(){
         for (Cliente referencia : clientes){
             System.out.println(referencia);
         }

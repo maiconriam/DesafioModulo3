@@ -11,4 +11,10 @@ public class ServicoVendedor {
         vendedores.add(vendedor);
         return vendedor;
     }
+
+    public static void mostrarListaVendedores(){
+        for(Vendedor referencia : vendedores){
+            System.out.println(referencia);
+        }
+    }
 }
