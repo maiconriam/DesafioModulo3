@@ -9,5 +9,10 @@ public class Main {
         System.out.println("---------------");
         Vendedor vendedor = new Vendedor("Bruno", "48484884", "bruno@bruno", "4454455");
         System.out.println(vendedor);
+
+        System.out.println("-----------");
+        Venda venda = new Venda("Caixa", 8.5, "12/03/1993", vendedor, cliente);
+
+        System.out.println(venda);
     }
 }
