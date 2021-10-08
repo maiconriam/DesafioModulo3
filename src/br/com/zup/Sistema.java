@@ -43,10 +43,9 @@ public class Sistema {
         String nomeDoProduto = capturarDados("Digite o nome do produto:").nextLine();
         double valor = capturarDados("Qual o valor do produto?").nextDouble();
         String dataDeRegistro = capturarDados("Qual a data de registo?").nextLine();
-
-        Cliente cliente = cadastrarCliente();
+        String cpfCliente = capturarDados("Qual o cpf do cliente para essa venda?").nextLine();
         Vendedor vendedor = cadastrarVendedor();
-        Venda venda = ServicoVenda.cadastrarVenda(nomeDoProduto, valor, dataDeRegistro, vendedor, cliente);
+        Venda venda = ServicoVenda.cadastrarVenda(nomeDoProduto, valor, dataDeRegistro, vendedor, cpfCliente);
         return venda;
     }
 
